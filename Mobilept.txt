@@ -1,0 +1,64 @@
+
+-Insecure logging
+adb shell ps | grep "appname"
+u will get the process id 
+adb logcat | grep processid
+
+-Hardcoding issues
+check in java.class
+
+-Insecure Data Storage
+check in source code & 
+adb shell
+cd /data/data/
+ls
+cd com.packagename
+ls
+cd shared_prefs
+ls
+cat packagename_preferences.xml
+
+-Temporary Files Insecure Storage
+adb shell
+cd/data/data/
+ls
+cd com.packagename
+ls
+tempfile(username&passwd)
+
+-External Insecure data storage
+cd /mnt/sdcard
+ls -a 
+.uinfo.txt = normal text or cipher text
+cat .uinfo.txt
+
+-Input validation error -SQL injection  
+foreg: diva'or'1'='1
+it will give all username and passwd
+
+-Abusing webview in android 
+try site links in input http://osint-spy.com
+and try file://mnt/sdcard/demo.txt - with any files
+
+-Access Control Issues
+Check any access control activity in androidmanifest.xml file
+check the intent filter
+like com.packagename.action.VIEW_CREDS - copy this which activity storing creds
+adb shell
+am   - Activity Manager
+am start -a com.packagename.action.VIEW_CREDS
+With Touching the application in mobile we can access the control of app by using intent filter
+
+- Authentication Based Access control Issues
+
+
+
+
+
+
+
+
+
+
+
+
